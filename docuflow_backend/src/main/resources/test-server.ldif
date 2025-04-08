@@ -1,0 +1,91 @@
+dn: dc=example,dc=com
+objectclass: top
+objectclass: domain
+objectclass: extensibleObject
+dc: example
+
+dn: ou=DocuFlowUsers,dc=example,dc=com
+objectclass: top
+objectclass: organizationalUnit
+ou: DocuFlowUsers
+
+dn: uid=submit1,ou=DocuFlowUsers,dc=example,dc=com
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: Submitter One
+sn: One
+uid: submit1
+userPassword: $2a$10$c6bSeWPhg06xB1lvmaWNNe4NROmZiSpYhlocU/98HNr2MhIOiSt36
+
+dn: uid=review1,ou=DocuFlowUsers,dc=example,dc=com
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: Reviewer One
+sn: One
+uid: review1
+userPassword: $2a$10$c6bSeWPhg06xB1lvmaWNNe4NROmZiSpYhlocU/98HNr2MhIOiSt36
+
+dn: uid=review2,ou=DocuFlowUsers,dc=example,dc=com
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: Reviewer Two
+sn: Two
+uid: review2
+userPassword: $2a$10$c6bSeWPhg06xB1lvmaWNNe4NROmZiSpYhlocU/98HNr2MhIOiSt36
+
+dn: uid=approve1,ou=DocuFlowUsers,dc=example,dc=com
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: Approver One
+sn: One
+uid: approve1
+userPassword: $2a$10$c6bSeWPhg06xB1lvmaWNNe4NROmZiSpYhlocU/98HNr2MhIOiSt36
+
+dn: uid=approve2,ou=DocuFlowUsers,dc=example,dc=com
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: Approver Two
+sn: Two
+uid: approve2
+userPassword: $2a$10$c6bSeWPhg06xB1lvmaWNNe4NROmZiSpYhlocU/98HNr2MhIOiSt36
+
+dn: uid=otheruser,ou=DocuFlowUsers,dc=example,dc=com
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: Other User
+sn: User
+uid: otheruser
+userPassword: $2a$10$c6bSeWPhg06xB1lvmaWNNe4NROmZiSpYhlocU/98HNr2MhIOiSt36
+
+dn: ou=Groups,dc=example,dc=com
+objectclass: top
+objectclass: organizationalUnit
+ou: Groups
+
+dn: cn=docuflow-developers,ou=Groups,dc=example,dc=com
+objectclass: top
+objectclass: groupOfUniqueNames
+cn: docuflow-developers
+ou: developer
+uniqueMember: uid=submit1,ou=DocuFlowUsers,dc=example,dc=com
+uniqueMember: uid=review1,ou=DocuFlowUsers,dc=example,dc=com
+
+dn: cn=docuflow-approvers,ou=Groups,dc=example,dc=com
+objectclass: top
+objectclass: groupOfUniqueNames
+cn: docuflow-approvers
+ou: approver
+uniqueMember: uid=approve1,ou=DocuFlowUsers,dc=example,dc=com
+uniqueMember: uid=approve2,ou=DocuFlowUsers,dc=example,dc=com
